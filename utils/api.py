@@ -1,5 +1,13 @@
 import requests
-from config import API_KEY, BASE_URL
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Access variables
+API_KEY = os.getenv("API_KEY")
+BASE_URL = os.getenv("BASE_URL")
 
 def get_movie_id(movie_name):
     """Fetches the movie ID from TMDb API."""
